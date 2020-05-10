@@ -27,6 +27,7 @@ public class hashPortion {
     }
 
     public static void hashText(String keyString) throws IOException {
+        long startTime = System.nanoTime();
         int count = 0;
         int key = hashCode(keyString);
         ArrayList<String> textWords = new ArrayList<String>();
@@ -48,5 +49,9 @@ public class hashPortion {
             }
             continue;
         }
+        
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+        System.out.println("Go to location " + count + ".\nTime taken to find: " + duration + ".");
     }
 }
